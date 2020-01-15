@@ -1,0 +1,1928 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="icon" href="https://www.sih.gov.in/img/favicon-sih.png" type="image/png" sizes="16x16">
+        <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"441b2e5302",applicationID:"232363356"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="csrf-token" content="XrTtyKSVfPOMfwUhnZzbTGF8aFkhRri4xxbNT9J5">
+        <meta name="author" content="">
+        <title>SIH</title>
+		
+		<script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-131850444-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+          </script>
+    <!-- CSS-->
+    <link type="text/css" rel="stylesheet"  href="https://www.sih.gov.in/lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    
+  
+    <!-- JS-->
+    <script src="https://www.sih.gov.in/lib/jquery-3.0.0.min.js" type="text/javascript"></script>
+    <script src="https://www.sih.gov.in/lib/bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.sih.gov.in/css/style.css" rel="stylesheet" />
+   <script type="text/javascript" src=" https://www.sih.gov.in/js/typeahead.js"></script>
+</head>
+
+<body>
+        <a href="#" class="scrollup">Scroll</a>
+        <style>
+        .style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+  background-color: #F5F5F5;
+  width: 6px;
+  height: 6px;
+}
+
+.blink_me {
+  animation: blinker 0.8s linear infinite;
+}
+
+@keyframes  blinker {
+  50% {
+    opacity: 0;
+    color: blue;
+  }
+}
+
+.style-2::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+	background-color: #F5F5F5;
+}
+
+.style-2::-webkit-scrollbar-thumb
+{
+  width: 6px;
+  height: 6px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #000d27;
+}
+#notification_counter{
+    display: none;
+}
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+.zip {
+    text-decoration: none !important;
+}
+.zip:hover { color:white !important; }
+.blink{
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-direction: alternate;
+    color: white;
+}
+
+.typeahead {
+    color: black;
+    }
+	.tt-menu { width:100%; }
+	ul.typeahead{margin:0px;padding:10px 0px;
+    background: white !important;}
+	ul.typeahead.dropdown-menu li a {
+        padding: 10px !important;	
+        border-bottom:#CCC 1px solid;
+        color:black;
+        }
+        ul.typeahead.dropdown-menu li {
+            list-style: none !important;
+            margin-left: 0px !important;
+        }
+        
+	ul.typeahead.dropdown-menu li:last-child a { border-bottom:0px !important; }
+
+	.demo-label {font-size:1.5em;color: #686868;font-weight: 500;color:#FFF;}
+	.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+		text-decoration: none;
+		background-color: orange;
+		outline: 0;
+	}
+    .image_resize{
+max-width:10em;
+max-height:10em;
+background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
+object-fit: contain;
+}
+.image_resize_pop{
+max-width:15em;
+max-height:15em;
+background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
+object-fit: contain;   
+}
+.blinkc{
+    background-color: red;
+}
+        </style>
+        
+    <div class="container-fluid">
+           
+        <!--Header Starts-->
+        <header id="header" class="header sticky">
+
+
+            <div class="row bg-light navbar-fixed-top">
+
+
+			
+			<li class="nav-item"  style="position:absolute;color:white;z-index:9999;width:100%;text-align:center;font-size:21px;font-weight:36;background:#E66225;">
+                   <marquee>
+                   	<a href="#" style="color: #000D27;text-decoration:none; margin-left:75px;">
+                   	Last day of submitting shortlisted teams after internal hackathon is 10th February, 2020. This deadline will not be extended further under any circumstances.
+                   </a>
+                   <a href="#" style="color: #000D27;text-decoration:none; margin-left:75px;">
+                   	Final dates for Grand Finale of SIH2020 Software Edition: 4th-5th April, 2020.
+                   </a>
+					<a class="nav-link" href="https://www.sih.gov.in/letters/Idea ppt.pptx" style="color: #FFF;text-decoration:none; margin-left:75px;" target="_blank" download>
+                        Download Idea ppt template sample - SIH2020.
+                    </a>
+                    <a class="nav-link" href="https://www.sih.gov.in/pdf/IdeasubmissionprocessSIH2020.pdf" style="color: #FFF;text-decoration:none; margin-left:75px;" target="_blank">
+                        Idea Submission Process - SIH2020.
+                    </a>
+                    <a class="nav-link" href="https://forms.gle/aVC7GXa8VBKCgobP8" style="color: #FFF;text-decoration:none; margin-left:75px;" target="_blank">
+                        Nodal Centre application for SIH2020 Software Edition.
+                    </a>
+                    <a href="https://www.sih.gov.in/sih2020PS" style="color: #FFF;text-decoration:none; margin-left:75px;">
+                        Problem Statements Released - (Part 1 + Part 2).
+                    </a>
+					<a href="#" style="color: #000D27;text-decoration:none; margin-left:75px;">
+				        Problem statement submission by Ministries, PSUs, NGOs, Companies is Closed.
+					</a>
+					
+                   
+					</marquee>
+					
+                    </li>
+
+                    
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 left_menu">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            
+                                <i class="fa fa-bars navbar-toggle collapsed show_toggle"
+                                data-toggle="collapse" 
+                                data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false"></i>
+                            <a class="navbar-brand"  href="https://www.sih.gov.in">
+                                    <img src="https://www.sih.gov.in/img/logo.png" />
+                                </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                              
+
+                                                                    <ul class="navbar-nav nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="https://www.sih.gov.in/about">SIH 2020</a>
+                                        </li>
+                                        <li class="dropdown nav-item">
+                                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Past Events
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2017">SIH-2017</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2018Software">SIH-2018 Software</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2018Hardware">SIH-2018 Hardware</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2019">SIH-2019 Software</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2019Hard">SIH-2019 Hardware</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown nav-item">
+                                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/mediaNewsUpdate">News Updates</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/mediaSocialMedia">Social Media</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="https://www.sih.gov.in/importantResources">Learning Resources</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/faqs">FAQs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/contactUs">Contact Us</a>
+                                                </li>
+												<!-- <li>
+                                                    <a href="https://www.sih.gov.in/knowYourCollegeSPOC">Know Your College SPOC</a>
+                                                </li> -->
+												 
+												
+                                            </ul>
+                                        </li>
+										<li class="nav-item">
+                                            <a class="nav-link" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Problem Statements</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="https://www.sih.gov.in/sih2020PS">Published (Part1 + Part2)</a>
+                                                </li>
+                                                
+                                        </ul>
+                                        </li>
+										
+										<li class="nav-item">
+                                            <a class="nav-link" target="_blank" href="https://www.sih.gov.in/pdf/PS_Newspaperad_Color.pdf">Advertisement</a>
+
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link blink" href="http://cs.co/sih202001" target="_blank">CISCO Challenge<img src="https://www.sih.gov.in/img/new-img.gif" width="80px" height="40px"></a>
+                                        </li>
+										<!--<li class="nav-item">
+                                            <a class="nav-link" href="https://www.sih.gov.in/finalResult">Grand Finale Winners-Software</a>
+                                        </li> -->
+										
+
+                                       
+                                    </ul>
+                            
+                        </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 right_menu">
+                    <div class="pull-right secondory-links">
+                                                     <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#Registeration_type_modal"><img width="90px" src="https://www.sih.gov.in/img/register.gif"></a> |
+                        
+                        <a class="nav-link"  href="https://www.sih.gov.in/signin">Log in</a> |
+                        <a class="nav-link" href="https://www.sih.gov.in/grievance"><blink>Grievance</blink></a> 
+                        
+                            
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </header>
+
+     
+
+
+        
+<link href="https://www.sih.gov.in/dataTable/css/jquery.dataTables.css" rel="stylesheet" />
+<script src="https://www.sih.gov.in/dataTable/js/jquery.dataTables.js" type="text/javascript"></script>
+
+<style>
+        .colomn_border{
+                border: 1px solid black !important;
+        }
+.image_resize1{
+max-width:10em;
+max-height:10em;
+background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
+object-fit: contain;
+width: 129px;
+height: 90px;
+}
+.Filter_label{
+    color:orange;
+}
+        </style>
+<div class="row custom">
+
+           <!--Banner-->
+<div class="carousel">
+        <!-- Wrapper for slides -->
+
+    </div>
+     <!--Banner-->
+          
+        <!-- SIH Details -->
+        <div class="intro clearfix " style="padding: 35px 40px 250px 20px; ">
+             
+                <div class="table-responsive middle_container">  
+                                                <div class="col-md-12" style="display: block;width: 100%;height: 34px;font-size: 18px;line-height: 1.42857143;color: #03132E;">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8"> 
+                        <h style="font-size: 18px;float: right; font-weight: bold; color: #03132E">Total Problem Statement(s) (Software) : 258</h>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <h style="font-size: 18px; font-weight: bold; color: #03132E">Total Problem Statement(s) (Hardware) : 95</h><br/>
+                      </div>
+                                  <div class="col-md-2">  </div>
+                                  </div>
+      
+                          
+      
+                              <div class="row" style="width: 100%;">
+                                      <div class="col-md-3">
+                                              Technology Bucket : 
+                                               <select id="technology" class="form-control">
+                                                <option value="QWxs"  selected>All</option>
+                                                                                                         <option value="MQ=="
+                                                                                                                  >Agriculture and Rural Development</option>
+                                                                                                         <option value="Mg=="
+                                                                                                                  >Clean Water</option>
+                                                                                                         <option value="Mw=="
+                                                                                                                  >Robotics & Drones</option>
+                                                                                                         <option value="NA=="
+                                                                                                                  >Healthcare & Biomedical Devices</option>
+                                                                                                         <option value="NQ=="
+                                                                                                                  >Energy / Renewable Energy</option>
+                                                                                                         <option value="Ng=="
+                                                                                                                  >Security & Surveillance</option>
+                                                                                                         <option value="Nw=="
+                                                                                                                  >Smart Communication</option>
+                                                                                                         <option value="OA=="
+                                                                                                                  >Smart Vehicles</option>
+                                                                                                         <option value="MTA="
+                                                                                                                  >Software - Mobile App development</option>
+                                                                                                         <option value="MTE="
+                                                                                                                  >Miscellaneous</option>
+                                                                                                         <option value="MTI="
+                                                                                                                  >Software - Web App development</option>
+                                                                                                         <option value="MTM="
+                                                                                                                  >Travel and Tourism</option>
+                                                                                                         <option value="MTQ="
+                                                                                                                  >Finance</option>
+                                                                                                         <option value="MTU="
+                                                                                                                  >Life Sciences</option>
+                                                                                                         <option value="MTc="
+                                                                                                                  >Waste Management</option>
+                                                                                                         <option value="MTg="
+                                                                                                                  >Food Technology</option>
+                                                                                                         <option value="MjA="
+                                                                                                                  >Smart Education</option>
+                                                                                                         <option value="MjE="
+                                                                                                                  >Smart Cities</option>
+                                                                                                         <option value="MjI="
+                                                                                                                  >Sports and Fitness</option>
+                                                                                                         <option value="MjM="
+                                                                                                                  >Smart Textiles</option>
+                                                                                                         <option value="MjQ="
+                                                                                                                  >Sustainable Environment</option>
+                                                                                                     </select>
+                                               </div>
+      
+                                               <div class="col-md-3" style="width: 25%">
+                                                      Category 
+                                                      <select id="category" class="form-control">
+                                                      <option value="QWxs"  >All</option>
+                                                      <option value="U29mdHdhcmU="  selected>Software</option>
+                                                      <option value="SGFyZHdhcmU="  >Hardware</option>
+                                                      </select>
+                                                     
+                                              </div>
+                          
+          <div class="col-md-3">
+          Organization
+          <select id="organization"  data-live-search="true" data-live-search-style="startsWith" class="form-control selectpicker">
+          <option value="QWxs"  selected>All</option>
+                    <option value="QWRhbmkgUG9ydCBhbmQgU0VaIEx0ZA=="  >Adani Port and SEZ Ltd</option>
+                    <option value="QWlycG9ydHMgQXV0aG9yaXR5IG9mIGluZGlh"  >Airports Authority of india</option>
+                    <option value="QWxsIEluZGlhIEluc3RpdHV0ZSBvZiBBeXVydmVkYSAtIE1pbmlzdHJ5IG9mIEFZVVNI"  >All India Institute of Ayurveda - Ministry of AYUSH</option>
+                    <option value="QW1hem9uIFdlYiBTZXJ2aWNlcw=="  >Amazon Web Services</option>
+                    <option value="QW5kaHJhIFByYWRlc2ggSW5ub3ZhdGlvbiBTb2NpZXR5LCBJVEUmQyBEZXBhcnRtZW50"  >Andhra Pradesh Innovation Society, ITE&amp;C Department</option>
+                    <option value="QVJBSQ=="  >ARAI</option>
+                    <option value="QXV0b2Rlc2s="  >Autodesk</option>
+                    <option value="QmFqYWogRmluIFNlcnY="  >Bajaj Fin Serv</option>
+                    <option value="QkVNTCBMaW1pdGVk"  >BEML Limited</option>
+                    <option value="QmhhcmF0IEVsZWN0cm9uaWNzIExpbWl0ZWQgLCBCZW5nYWx1cnU="  >Bharat Electronics Limited , Bengaluru</option>
+                    <option value="QmhhcmF0IEZvcmdlIEx0ZA=="  >Bharat Forge Ltd</option>
+                    <option value="QnVyZWF1IG9mIFBvbGljZSBSZXNlYXJjaCAmIERldmVsb3BtZW50"  >Bureau of Police Research &amp; Development</option>
+                    <option value="Q0JTRQ=="  >CBSE</option>
+                    <option value="Q0RLIEdsb2JhbA=="  >CDK Global</option>
+                    <option value="Q2VudHJhbCBHcm91bmQgV2F0ZXIgQm9hcmQsIE1pbmlzdHJ5IG9mIEphbCBTaGFrdGk="  >Central Ground Water Board, Ministry of Jal Shakti</option>
+                    <option value="Q2VudHJhbCBXYXJlaG91c2luZyBDb3Jwb3JhdGlvbg=="  >Central Warehousing Corporation</option>
+                    <option value="Q2VudHJhbCBXYXRlciBDb21taXNzaW9uLCBNaW5pc3RyeSBvZiBKYWwgU2hha3Rp"  >Central Water Commission, Ministry of Jal Shakti</option>
+                    <option value="Q2lzY28gREVWTkVU"  >Cisco DEVNET</option>
+                    <option value="Q29nbml6YW50IFRlY2hub2xvZ3kgU29sdXRpb25zIEluZGlhIFB2dC4gTHRk"  >Cognizant Technology Solutions India Pvt. Ltd</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBBdG9taWMgRW5lcmd5"  >Department of Atomic Energy</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBFbXBvd2VybWVudCBvZiBQZXJzb25zIHdpdGggRGlzYWJpbGl0aWVzLCBNaW5pc3RyeSBvZiBTb2NpYWwgSnVzdGljZSBhbmQgRW1wb3dlcm1lbnQ="  >Department of Empowerment of Persons with Disabilities, Ministry of Social Justice and Empowerment</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBGaW5hbmNpYWwgU2VydmljZXM="  >Department of Financial Services</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5IGFuZCBCaW8gVGVjaG5vbG9neSwgR292ZXJubWVudCBvZiBLYXJuYXRha2E="  >Department of Information Technology and Bio Technology, Government of Karnataka</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBTY2llbmNlIGFuZCBUZWNobm9sb2d5"  >Department of Science and Technology</option>
+                    <option value="RGVwYXJ0bWVudCBvZiBTY2llbnRpZmljIGFuZCBJbmR1c3RyaWFsIFJlc2VhcmNo"  >Department of Scientific and Industrial Research</option>
+                    <option value="RGlyZWN0b3JhdGUgb2YgVGVjaG5pY2FsIEVkdWNhdGlvbiBDaGFuZGlnYXJo"  >Directorate of Technical Education Chandigarh</option>
+                    <option value="RHIuIEIgUiBBbWJlZGthciBJbnN0aXR1dGUgb2YgVGVjaG5vbG9neQ=="  >Dr. B R Ambedkar Institute of Technology</option>
+                    <option value="RHRlIG9mIElUICYgQ3liZXIgU2VjdXJpdHksIERSRE8="  >Dte of IT &amp; Cyber Security, DRDO</option>
+                    <option value="RWR1Y2F0aW9uIGRlcGFydG1lbnQgR3VqYXJhdA=="  >Education department Gujarat</option>
+                    <option value="RklTIEdsb2JhbA=="  >FIS Global</option>
+                    <option value="R0FJTA=="  >GAIL</option>
+                    <option value="R0UgSGVhbHRoY2FyZQ=="  >GE Healthcare</option>
+                    <option value="R25hcnVzIFNvbHV0aW9ucw=="  >Gnarus Solutions</option>
+                    <option value="R292IG9mIFV0dGFyYWtoYW5k"  >Gov of Uttarakhand</option>
+                    <option value="R292ZXJubWVudCBvZiBBbmRocmEgUHJhZGVzaA=="  >Government of Andhra Pradesh</option>
+                    <option value="R292dCBvZiBHb2E="  >Govt of Goa</option>
+                    <option value="R292dCBvZiBQdWR1Y2hlcnJ5"  >Govt of Puducherry</option>
+                    <option value="R292dC4gb2YgQmloYXIgKERPQSk="  >Govt. of Bihar (DOA)</option>
+                    <option value="R292dC4gb2YgTWFkaHlhIFByYWRlc2g="  >Govt. of Madhya Pradesh</option>
+                    <option value="R292dC5vZiBTaWtraW0="  >Govt.of Sikkim</option>
+                    <option value="R3JlYXQgTGVhcm5pbmc="  >Great Learning</option>
+                    <option value="SW5kaWFuIFNwYWNlIFJlc2VhcmNoIE9yZ2FuaXNhdGlvbiAoSVNSTyk="  >Indian Space Research Organisation (ISRO)</option>
+                    <option value="TWF0aFdvcmtz"  >MathWorks</option>
+                    <option value="TWF6YWdvbiBEb2NrIFNoaXBidWlsZGVycyBMdGQu"  >Mazagon Dock Shipbuilders Ltd.</option>
+                    <option value="TUlD"  >MIC</option>
+                    <option value="TWluaXN0cnkgb2YgQWdyaWN1bHR1cmUgQ29vcGVyYXRpb24gYW5kIEZhcm1lciBXZWxmYXJl"  >Ministry of Agriculture Cooperation and Farmer Welfare</option>
+                    <option value="TWluaXN0cnkgb2YgQ29tbXVuaWNhdGlvbnM="  >Ministry of Communications</option>
+                    <option value="TWluaXN0cnkgb2YgQ29uc3VtZXIgQWZmYWlycywgRm9vZCAmIFB1YmxpYyBEaXN0cmlidXRpb24="  >Ministry of Consumer Affairs, Food &amp; Public Distribution</option>
+                    <option value="TWluaXN0cnkgb2YgRm9vZCBQcm9jZXNzaW5nIEluZHVzdHJpZXM="  >Ministry of Food Processing Industries</option>
+                    <option value="TWluaXN0cnkgb2YgSGVhbHRoIGFuZCBGYW1pbHkgV2VsZmFyZQ=="  >Ministry of Health and Family Welfare</option>
+                    <option value="TWluaXN0cnkgb2YgSG91c2luZyBhbmQgVXJiYW4gQWZmYWlycw=="  >Ministry of Housing and Urban Affairs</option>
+                    <option value="TWluaXN0cnkgb2YgTWljcm8sIFNtYWxsICYgTWVkaXVtIEVudGVycHJpc2Vz"  >Ministry of Micro, Small &amp; Medium Enterprises</option>
+                    <option value="TWluaXN0cnkgb2YgUGV0cm9sZXVtIGFuZCBOYXR1cmFsIEdhcw=="  >Ministry of Petroleum and Natural Gas</option>
+                    <option value="TWluaXN0cnkgb2YgUG93ZXI="  >Ministry of Power</option>
+                    <option value="TWluaXN0cnkgb2YgUmFpbHdheXM="  >Ministry of Railways</option>
+                    <option value="TWluaXN0cnkgb2YgUnVyYWwgRGV2ZWxvcG1lbnQ="  >Ministry of Rural Development</option>
+                    <option value="TWluaXN0cnkgb2YgVHJpYmFsIEFmZmFpcnM="  >Ministry of Tribal Affairs</option>
+                    <option value="TWluaXN0cnkgb2YgV29tZW4gYW5kIENoaWxkIERldmVsb3BtZW50"  >Ministry of Women and Child Development</option>
+                    <option value="TWluaXN0cnkgb2YgWW91dGggQWZmYWlycyAmIFNwb3J0cw=="  >Ministry of Youth Affairs &amp; Sports</option>
+                    <option value="TUlYT1JH"  >MIXORG</option>
+                    <option value="TkFMQ08="  >NALCO</option>
+                    <option value="TkFUSU9OQUwgQ1JJTUUgUkVDT1JEUyBCVVJFQVU="  >NATIONAL CRIME RECORDS BUREAU</option>
+                    <option value="TmF0aW9uYWwgSnV0ZSBCb2FyZCwgTWluIG9mIFRleHRpbGVz"  >National Jute Board, Min of Textiles</option>
+                    <option value="TmF0aW9uYWwgTWlzc2lvbiBmb3IgQ2xlYW4gR2FuZ2EsIERvV1IsIFJEICYgR1IsIE1pbmlzdHJ5IG9mIEphbCBTaGFrdGk="  >National Mission for Clean Ganga, DoWR, RD &amp; GR, Ministry of Jal Shakti</option>
+                    <option value="TkNSIENvcnBvcmF0aW9uIChJbmRpYSkgUHJpdmF0ZSBMaW1pdGVk"  >NCR Corporation (India) Private Limited</option>
+                    <option value="UkNG"  >RCF</option>
+                    <option value="VENJ"  >TCI</option>
+                    <option value="VHJpcHVyYSBJbnN0aXR1dGUgb2YgVGVjaG5vbG9neQ=="  >Tripura Institute of Technology</option>
+                    <option value="Vk13YXJlIFNvZnR3YXJlIEluZGlhIFB2dC5MdGQu"  >VMware Software India Pvt.Ltd.</option>
+                    <option value="WWFtYWhhIE1vdG9yIFNvbHV0aW9uIEluZGlhIFB2dCBMdGQ="  >Yamaha Motor Solution India Pvt Ltd</option>
+                    </select>
+          </div>
+          <br><br>
+          <div class="col-md-12" style="display: block;padding-top: 44px;width: 100%;height: 34px;font-size: 18px;line-height: 1.42857143;color: #03132E;">
+                  <div class="col-md-4">  </div>
+                  <div class="col-md-8"> 
+      
+      <label><input type="radio" name="organization_type" value="QWxs"  checked> <span class="Filter_label">All</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="organization_type" value="U3RhdGVfTWluaXN0cnk="  > <span class="Filter_label">State Government</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="organization_type" value="Q2VudHJhbF9NaW5pc3RyeQ=="  > <span class="Filter_label">Central Ministry</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="organization_type" value="SW5kdXN0cnlfcGVyb3Nvbm5lbA=="  > <span class="Filter_label">Industry Personnel</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="organization_type" value="U3R1ZGVudF9Jbm5vdmF0aW9u"  > <span class="Filter_label">Student Innovation</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+        
+        </div>
+
+                        </div>
+                        <br>
+                        <table id="table_id" class="display">
+                            <thead>
+                                    <tr>
+                                       
+                                        <th >Logo</th>
+                                        <th>Organization</th>
+                                        <th >Problem Statement Title</th>
+                                        <th >Category</th>
+                                        <th >PS Number</th>
+                                        <!-- <th >Submitted Idea(s) Count</th> -->
+                                        <th >Domain Bucket</th>
+                                        
+                                        
+                                    </tr>
+
+                                   
+                              </thead>
+                              <tbody>
+                                                                    <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal0" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal0" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement467"
+                                        >Smart Textiles</a>
+                                        <div id="ViewProblemStatement467" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Smart Textiles</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Smart Textiles</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC467</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Smart Textiles</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal1" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal1" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement468"
+                                        >Smart Vehicles</a>
+                                        <div id="ViewProblemStatement468" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Smart Vehicles</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Smart Vehicles</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC468</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Smart Vehicles</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal2" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal2" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement469"
+                                        >Sports &amp; Fitness</a>
+                                        <div id="ViewProblemStatement469" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Sports &amp; Fitness</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Sports and Fitness</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC469</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Sports and Fitness</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal3" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal3" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement470"
+                                        >Sustainable environment</a>
+                                        <div id="ViewProblemStatement470" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Sustainable environment</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Sustainable Environment</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC470</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Sustainable Environment</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal4" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal4" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement471"
+                                        >Healthcare &amp; Biomedical devices</a>
+                                        <div id="ViewProblemStatement471" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Healthcare &amp; Biomedical devices</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Healthcare & Biomedical Devices</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC471</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Healthcare &amp; Biomedical Devices</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal5" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal5" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement472"
+                                        >Security &amp; Surveillance</a>
+                                        <div id="ViewProblemStatement472" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Security &amp; Surveillance</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Security & Surveillance</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC472</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Security &amp; Surveillance</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal6" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal6" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement473"
+                                        >Miscellaneous</a>
+                                        <div id="ViewProblemStatement473" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Miscellaneous</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Miscellaneous</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC473</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Miscellaneous</td>
+                                    
+                                </tr>
+                                                                <tr>
+                                    
+                                    <td style="vertical-align: inherit; width: 10%" class="colomn_border">
+
+                                            <img src="https://www.sih.gov.in/uploads/logo/no_image.png" style="max-width: 150px;max-height: 150px;"   data-toggle="modal" data-target="#UserlogoViewerModal7" class="Avoid_Right_Click image_resize1">
+                                            <div class="modal fade" id="UserlogoViewerModal7" role="dialog">
+                                              <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator"  method="POST" action="">
+                                              <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title" style="text-align: center;"> </h4>
+                                              </div>
+                                              <div class="modal-body">
+                        
+                                              <img style="width:100%" src="https://www.sih.gov.in/uploads/logo/no_image.png" class="Avoid_Right_Click img-thumbnail"> 
+                                              </div>
+                                              </form> 
+                                              </div>
+                                              </div>
+                                              </div>
+
+                                    </td>
+                                    <td class="colomn_border">MIC</td>
+                                    <td class="colomn_border"><a style ="font-size:15px ;margin-bottom: 4px !important; cursor: pointer"
+                                        data-toggle="modal" data-target="#ViewProblemStatement474"
+                                        >Smart Education</a>
+                                        <div id="ViewProblemStatement474" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                        
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <img class="navbar-brand" style="height:45px;" src="https://www.sih.gov.in/img/logo.png" />
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h6 class="modal-title" style="text-align: center; font-size: 18px; font-weight: bold; margin: 23px; padding-right: 88px;"> Problem Statement Details  </h6>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <table id="settings" class="table table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th    style="vertical-align: top;">Description</th>
+                                                        <td>
+                                                            <div 
+                                                            class="style-2"
+                                                            style="
+                                                            overflow-y: auto;
+                                                            min-height:20px;
+                                                            max-height: 200px;"> Smart Education</div>
+                                                           </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Organization</th>
+                                                        <td>MIC </td>
+                                                                        
+                                                        </tr>
+                        
+                                            
+                        
+                                                        <tr>
+                                                        <th>Category</th>
+                                                        <td>Software</td>
+                                                        </tr>
+                        
+                                                        <tr>
+                                                        <th>Domain Bucket</th>
+                                                        <td>Smart Education</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <th>Youtube Link</th>
+                                                          <td>
+                                                              
+                                                            
+                                                                <a href=" " target="_blank"> </a>
+                                                        
+                                                        </td>  
+                                                        </tr> 
+                                                                                                              <tr>
+                                                          <th>Dataset Link</th>
+                                                          <td>
+                                                            
+                                                             <a href="https://www.sih.gov.in/uploads/psData/"><br></a>
+                                                                                                                                                                              </td>  
+                                                        </tr>         
+                                                  </thead>
+                                                 </table>
+                                            </div>
+                        
+                                            </div>
+                        
+                                            </div>
+                                            </div>
+                                        </td>
+                                    <td class="colomn_border">Software</td>
+                                    <td class="colomn_border">IC474</td>
+                                    <!-- <td class="colomn_border">0</td> -->
+                                    <td class="colomn_border">Smart Education</td>
+                                    
+                                </tr>
+                                                         </tbody>
+                        </table>
+						<ul class="pagination">
+        
+                    <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=25" rel="prev">&laquo;</a></li>
+        
+        
+                    
+            
+            
+                                                                        <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=1">1</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=2">2</a></li>
+                                                                    
+                            <li class="disabled"><span>...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=18">18</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=19">19</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=20">20</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=21">21</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=22">22</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=23">23</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=24">24</a></li>
+                                                                                <li><a href="https://www.sih.gov.in/sih2020PS/QWxs/U29mdHdhcmU=/QWxs/QWxs?page=25">25</a></li>
+                                                                                <li class="active"><span>26</span></li>
+                                                        
+        
+                    <li class="disabled"><span>&raquo;</span></li>
+            </ul>
+
+                        </div>
+                        
+                   
+              </div>
+
+    
+            </div>  
+
+            <script>
+     
+
+ $(document).ready( function () {
+                $('#table_id').dataTable( {
+                "pageLength": 100,
+				 "paging": false
+                } );
+                } );
+
+$('#technology').on('change', function () {
+     var technologyVal = $("#technology option:selected").val();
+     var categoryVal = $("#category option:selected").val();
+     
+     var organization = $("#organization option:selected").val();
+     var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+
+});
+
+$('#category').on('change', function () {
+  
+      var technologyVal = $("#technology option:selected").val();
+      var categoryVal = $("#category option:selected").val();
+      var organization = $("#organization option:selected").val();
+     var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+
+});
+$('#Complexity').on('change', function () {
+  var technologyVal = $("#technology option:selected").val();
+  var categoryVal = $("#category option:selected").val();
+  var organization = $("#organization option:selected").val();
+ var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+
+});
+
+$('#User').on('change', function () {
+  var technologyVal = $("#technology option:selected").val();
+  var categoryVal = $("#category option:selected").val();
+ var organization = $("#organization option:selected").val();
+ var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+
+});
+$('#organization').on('change', function () {
+  var technologyVal = $("#technology option:selected").val();
+  var categoryVal = $("#category option:selected").val();
+  var organization = $("#organization option:selected").val();
+  var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+
+});
+
+$("input[name='organization_type']").on('change', function () { 
+  var technologyVal = $("#technology option:selected").val();
+  
+  var categoryVal = $("#category option:selected").val();
+  
+ var organization = $("#organization option:selected").val();
+  
+  var organization_type = $("input[name='organization_type']:checked").val();
+  
+  window.open("https://www.sih.gov.in/sih2020PS/"+technologyVal+"/"+categoryVal+"/"+organization+"/"+organization_type,"_self");
+});
+
+
+                </script>
+
+        <footer class="footer row"  style="padding: 17px 0 21px 25px;">
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-sm-12 xs-footer-logo" style="padding-left: 104px;">
+                    <img src="https://www.sih.gov.in/img/logo.png" alt="SIH" width="120" height="50" />
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-sm-12 xs-footer-logo">
+
+                    <a class="sih-app-logo" target="_blank" href="https://play.google.com/store/apps/details?id=com.psl.sihapps&amp;hl=en">
+                        <img src="https://www.sih.gov.in/img/sih_app_icon.png" class="pull-left" alt="SIH" /> DOWNLOAD
+                        <br> Smart India Hackathon app
+                        <br>from Google Play Store
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-sm-12" style="padding-left: 0px;">
+                    <ul class="footer-links">
+                    <li>
+                        <i class="fa fa-phone"></i> +91 20 40130777
+                    </li>
+                    
+                    <li>
+                        <i class="fa fa-clock-o"></i> Mon to Fri-10.00 AM to 6:00 PM
+                    </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-sm-12">
+                    <ul class="footer-links">
+
+                        <li>
+                            <a class="fb" target="_blank" href="https://www.facebook.com/i4C.India/">
+                                <img src="https://www.sih.gov.in/img/fb-icon.png" alt="Facebook" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="fb" target="_blank" href="https://twitter.com/SIH_2020">
+                                <img src="https://www.sih.gov.in/img/twitter-icon.png" alt="twitter" />
+                            </a>
+                        </li>
+                        <li>
+                        <a class="fb" target="_blank" href="https://www.instagram.com/sih_2020/">
+                            <img src="https://www.sih.gov.in/img/instagram-logo-white.png" alt="Instagram" width="25" height="25">
+                        </a>
+                    </li>
+					
+                    </ul>
+                </div>
+                 
+
+                <!-- Copyright-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center;margin-top: 15px;">
+                        &copy; 2020 Smart India Hackathon. All rights reserved
+                </div>
+            </footer>
+
+       
+    </div>
+
+    <div class="modal fade" id="Profile_status" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title"  style="text-align: center;">Profile Status</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Your Application is not approved. Please contact to Admin .</p>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+
+          
+          <div class="modal fade" id="logoUploaderModal" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                        <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator" id="logo_upload_form"  method="POST" action="">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"  style="text-align: center;">Upload Logo</h4>
+                        </div>
+                            <div class="modal-body">
+                                
+                                   
+                                        <input type="hidden" name="_token" value="XrTtyKSVfPOMfwUhnZzbTGF8aFkhRri4xxbNT9J5">
+                                        <div class="form-group">
+                                         
+                                          <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                                                <label  for="email">Select File:</label>
+                                              </div>
+                                              <div class="col-lg-8 col-md-8 col-xs-8 col-sm-8">
+                                            <input type="file" name="logo" id="logo">
+                                          </div>
+                                        </div>
+                                        <span id="upload_msg"></span>      
+                                <strong style="color:red"><br>
+                                                          File Size Should Be Less Than 5 MB.<br>
+                                                          File Type Should Be of Format(s) (JPG,JPEG,PNG).<br>
+                                                        
+                                </strong>         
+                            </div>
+
+                            <div class="modal-footer">
+                                
+                                    <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
+                            </div>
+
+                        </form> 
+                       
+                </div>
+    
+                </div>
+                </div>
+
+
+                <div class="modal fade" id="logoViewerModal" role="dialog">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                            <form class="form-horizontal"  enctype="multipart/form-data" role="form" data-toggle="validator" id="logo_upload_form"  method="POST" action="">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" style="text-align: center;"> Logo</h4>
+                            </div>
+                                <div class="modal-body">
+                                    
+                                                              
+                                        
+                                </div>
+    
+                               
+    
+                            </form> 
+                           
+                    </div>
+                    </div>
+                    </div>
+
+          
+    <script src="https://www.sih.gov.in/js/common.js"></script>  
+
+        <script>
+        $(document).ready(function(){
+            setTimeout(function() {
+                $('#Alert_msg').fadeOut('fast');
+}, 3000); 
+});
+
+ function CancelEvent() {
+            var e = window.event;
+            //e.cancelBubble is supported by IE
+            e.cancelBubble = true;
+            e.returnValue = false;
+            //e.stopPropagation works only in Firefox.
+            if (e.stopPropagation) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        }
+
+        //Disable the click event of form 
+        $(document).keypress(function (e) {
+            //Check which key is pressed on the document or window
+            if (e.which == 13) {
+                // if it is 13 that means enter key pressed, then call the function to cancel the event
+                CancelEvent();
+            }
+        });
+
+
+          $(document).ready(function(){
+                     $.ajaxSetup({
+               
+                       headers: {
+               
+                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+               
+                       }
+               
+                       });
+            var frm = $('#logo_upload_form');
+
+            frm.submit(function (e) {
+                
+                var formData = new FormData($(this)[0]);
+               
+                 var file = document.querySelector("#logo");
+                if(file.files[0]==undefined){
+                        $('#upload_msg').css('color', 'red');
+                         document.getElementById("upload_msg").innerHTML ='Select An Image';
+                            setTimeout(function() {
+                               
+                            }, 3000); 
+                } else{
+
+                     fileSize =file.files[0].size //size in kb
+                        fileSize = fileSize / 1048576; //size in mb 
+
+                    if ( /\.(jpe?g|png|PNG|JPG|JPEG)$/i.test(file.files[0].name) === false ) { 
+                        $('#upload_msg').css('color', 'red');
+                         document.getElementById("upload_msg").innerHTML ='Invalid Image Type';
+                            setTimeout(function() {
+                                document.getElementById("upload_msg").innerHTML ="";
+                            }, 2000); 
+                    }
+
+                    else{
+
+                         if(fileSize>5 ){
+                            $('#upload_msg').css('color', 'red');
+                        document.getElementById("upload_msg").innerHTML ='File size exceeds the limit';
+                            setTimeout(function() {
+                                document.getElementById("upload_msg").innerHTML ="";
+                            }, 2000); 
+                    }
+                    else{
+                        $("#submit_button").hide();
+                                $.ajax({
+                                url: "https://www.sih.gov.in/upload_logo",
+                                data:formData,
+                                dataType:'json',
+                                type:'post',
+                                processData: false,
+                                contentType: false,
+                                success: function (data) {
+                                    if(data.msg=="Successfully Uploaded"){
+                                        $('#upload_msg').css('color', 'green');
+                                        $("#submit_button").hide();
+                                        $('#logo_upload_form')[0].reset();
+                            document.getElementById("upload_msg").innerHTML =data.msg;
+                            $('#logo_image').attr('src',data.Full_image);
+                            $('#thumnail_image').attr('src',data.Full_image);
+                            
+                            setTimeout(function() {
+                               
+                            }, 2000); 
+                                    }
+
+                                    else{
+                                        $("#submit_button").show();
+                                        $('#upload_msg').css('color', 'red');
+                            document.getElementById("upload_msg").innerHTML =data.msg;
+                            setTimeout(function() {
+                               
+                            }, 2000); 
+                                    }
+
+                          
+                                },
+                                error: function (data) {
+                               
+                                },
+                                });
+
+                    }
+
+                       
+                        
+                        }
+                }
+               
+                e.preventDefault();       
+         });
+  
+               });
+
+               function showlogoUploadSubmitButton(){
+                $("#submit_button").show();
+                $('#logo_upload_form')[0].reset();
+                document.getElementById("upload_msg").innerHTML ="";
+               }
+
+               function  gotoStatement_comment(id){
+                var url="https://www.sih.gov.in/edit_problem_statement/"+id;
+                var win = window.open(url, '_self');
+                win.focus();
+            }
+
+            
+        </script>
+        
+
+    <script>
+    $('.Avoid_Right_Click').bind('contextmenu', function(e) {
+    return false;
+    }); 
+    </script>
+
+
+<div id="problemstatement_type_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:97%">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+             
+                    <input type="radio" style="margin-left: 7%;" name="User_Register_Type"  value="1"  onclick="SendUserToItsPage(4)">
+                    <span class="sign_up_type" style="color:orange">Problem statements from Organizations/ Ministries</span>&nbsp;&nbsp;&nbsp; 
+
+                    <input type="radio" style="margin-left: 15%;"  name="User_Register_Type"  value="2" onclick="SendUserToItsPage(5)">
+                    <span class="sign_up_type" style="color:orange">Students Innovation</span> 
+                    </div>
+                    <div class="modal-footer"></div> 
+                     <div class="col-md-12">     
+                       
+                    </div>
+                  <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+
+
+<div id="Registeration_type_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header" style="color: #33A75C">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden='true'>&times;</button>
+                  <h4 class="modal-title" style="font-size: 20px; font-weight: bold; text-align: center;">Select Registration Type</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                    <div class="col-md-4" style="border-right: 1px dotted #C2C2C2; padding-left: 7%; height: 135px;"><img class="navbar-brand" style="height:65px;" src="https://www.sih.gov.in/img/logo.png" />
+                    </div>
+    
+                 <div class="col-md-8" style="padding-left: 10%">
+                    <input style="transform:scale(1.3);" type="radio" name="User_Register_Type"  value="1"  onclick="SendUserToItsPage(1)">
+                        <span class="sign_up_type" style="color:#03132E">Problem Statement Creater</span>&nbsp;&nbsp;&nbsp;  
+                        <br>
+                        <!-- <input style="transform:scale(1.3);" type="radio" name="User_Register_Type"  value="2" onclick="SendUserToItsPage(2)">
+                        <span class="sign_up_type" style="color:#03132E">College Faculty SPOC</span>&nbsp;&nbsp;&nbsp; 
+                        <br> -->
+                        <!--<input style="transform:scale(1.3);" type="radio" name="User_Register_Type" value="3" onclick="SendUserToItsPage(3)" >
+                        <span class="sign_up_type" style="color:#03132E">Students Team Leader</span>&nbsp;&nbsp;&nbsp;
+                        
+                        <br>-->
+                        <input style="transform:scale(1.3);" type="radio" name="User_Register_Type" value="igottwo" onclick="show2();" />
+                        <span class="sign_up_type" style="color:#03132E">College Faculty SPOC</span>&nbsp;&nbsp;&nbsp; 
+                        <div id="div1" style="display: none;">
+                            <input style="transform:scale(1.3);" type="radio" value="2" name="User_Register_Type" onclick="SendUserToItsPage(2)">
+                            <span class="sign_up_type" style="color:orange;">Existing Users</span> &nbsp;
+                            <input style="transform:scale(1.3);" type="radio" value="2" name="User_Register_Type" onclick="SendUserToItsPage(2)">
+                            <span class="sign_up_type" style="color:orange;">New Users</span><br>
+                            <span class="" style="color:red; font-size: 12px;">(*Please check your mail for OTP Verification)</span>
+                        </div>
+                        <br>
+                        <input style="transform:scale(1.3);" type="radio" name="User_Register_Type" value="4" onclick="SendUserToItsPage(4)" >
+                        <span class="sign_up_type" style="color:#03132E">Design Mentors</span>&nbsp;&nbsp;&nbsp;
+
+                        <br>
+                        <input style="transform:scale(1.3);" type="radio" name="User_Register_Type" value="5" onclick="SendUserToItsPage(5)" >
+                        <span class="sign_up_type" style="color:#03132E">Evaluator/Judges</span>&nbsp;&nbsp;&nbsp;
+                    </div>
+                   </div>      
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+            <script>
+            function SendUserToItsPage(input){
+switch (input) {
+    case 1:
+    window.open("https://www.sih.gov.in/signup","_self");
+    break;
+
+    case 2:
+    window.open("https://www.sih.gov.in/collegeRegistration","_self");
+    break;
+
+    case 3:
+    window.open("https://www.sih.gov.in/studentRegistration","_self");
+     break;
+
+    case 4:
+    window.open("https://www.sih.gov.in/designmregistration","_self");
+     break;
+     
+    case 5:
+    window.open("https://www.sih.gov.in/juryregistration","_self");
+     break;   
+}
+
+    }
+
+function show2(){ 
+$('#div1').css('display', 'block');
+}
+
+//     $(document).ready(function() {
+//     $('.js-example-basic-single').select2();
+// });
+
+ $(document).ready(function () {
+        $('#College_Name').typeahead({
+            source: function (query, result) {
+
+                
+                if(query.length>=2){
+                    document.getElementById("college_search_loader").style.display = "block";
+                   setTimeout(function() {
+                $.ajax({
+                    url: "https://www.sih.gov.in/search_college_name",
+					data: 'query=' + query,            
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+						result($.map(data, function (item) {
+							return item;
+                        }));
+                    }
+                    
+                });
+                document.getElementById("college_search_loader").style.display = "none";
+            }, 3000);
+                }
+            },
+            updater:function (item) {
+                $('[id$=selected_college]').val(item.aicte_code);
+                return item;
+}
+        });
+
+
+         $('#type_head_display_name').typeahead({
+            source: function (query, result) {
+
+                if(query.length>=2){
+                    document.getElementById("college_search_loader").style.display = "block";
+                   setTimeout(function() {
+                $.ajax({
+                    url: "https://www.sih.gov.in/search_college_name",
+					data: 'query=' + query,            
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+						result($.map(data, function (item) {
+							return item;
+                        }));
+                    }
+                    
+                });
+                document.getElementById("college_search_loader").style.display = "none";
+            }, 3000);
+                }
+                
+
+                
+            },
+            updater:function (item) {
+                $('[id$=College_Name_for_Student]').val(item.id);
+                return item;
+}
+        });
+    });
+
+    function sendToproblemStatement(){
+        // window.open("https://www.sih.gov.in/sih2019ProblemStatements","_self");
+        
+    }
+
+    function hideThis(){
+    $('#HideThisSubmitButton').hide();  
+  }
+
+          </script>
+
+
+
+
+   
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"441b2e5302","applicationID":"232363356","transactionName":"ZwRUNhdWXBFWVRZdC15OdwERXl0MGEULXFYAUA8yF1hQDlJbMUAFRARbBwtDQQ==","queueTime":0,"applicationTime":114,"atts":"S0NXQF9MTx8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
